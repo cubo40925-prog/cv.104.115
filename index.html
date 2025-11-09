@@ -6,132 +6,60 @@
     <title>CV - Lê Quốc Tuấn</title>
     <link rel="stylesheet" href="cv.css">
 </head>
-
 <body>
-    <!-- Hiệu ứng nền hạt -->
-    <div class="particles" id="particles"></div>
+    <div class="container">
 
-    <!-- Phần đầu -->
-    <div class="header">
-        <img src="avatar.jpg" class="avatar" alt="Ảnh đại diện">
-        <h1>LÊ QUỐC TUẤN</h1>
-        <p class="subtitle">Sinh viên Công nghệ Thông tin | Trường Đại học Sư phạm TP.HCM</p>
-
-        <div class="buttons">
-            <button onclick="showSection('about')">Giới thiệu</button>
-            <button onclick="showSection('education')">Học vấn</button>
-            <button onclick="showSection('skills')">Kỹ năng</button>
-            <button onclick="showSection('projects')">Dự án</button>
-            <button onclick="showSection('contact')">Liên hệ</button>
-        </div>
-    </div>
-
-    <!-- Nội dung chính -->
-    <div class="content">
-
-        <section id="about" class="section">
-            <h2>Giới thiệu</h2>
-
-            <div class="personal-info">
-                <p><strong>Họ và tên:</strong> Lê Quốc Tuấn</p>
-                <p><strong>Ngày sinh:</strong> 23/11/2007</p>
-                <p><strong>Quê quán:</strong> Thành phố Hồ Chí Minh</p>
-                <p><strong>Địa chỉ:</strong> 409/25, Vĩnh Viễn, Phường 5, Quận 10, TP.HCM</p>
+        <!-- Sidebar cá nhân -->
+        <aside class="sidebar">
+            <img src="avatar.jpg" class="avatar" alt="Ảnh đại diện">
+            <h1>Lê Quốc Tuấn</h1>
+            <p class="role">Sinh viên CNTT | ĐH Sư phạm TP.HCM</p>
+            
+            <div class="contact">
+                <h3>Liên hệ</h3>
+                <p><strong>Email:</strong> <a href="mailto:cubo40925@gmail.com">cubo40925@gmail.com</a></p>
+                <p><strong>Facebook:</strong> <a href="https://www.facebook.com/quoc.tuan.310257" target="_blank">facebook.com/quoc.tuan.310257</a></p>
+                <p><strong>Instagram:</strong> <a href="https://www.instagram.com/kurayami2k7/" target="_blank">@kurayami2k7</a></p>
+                <p><strong>Điện thoại:</strong> <a href="tel:0934103004">0934103004</a></p>
             </div>
-        </section>
+        </aside>
 
-        <section id="education" class="section hidden">
-            <h2>Học vấn</h2>
-            <ul>
-                <li><strong>2024 - nay:</strong> Đại học Sư phạm TP.HCM – Chuyên ngành Công nghệ Thông tin</li>
-                <li><strong>2021 - 2024:</strong> Trường TH-THCS-THPT Thanh Bình – Học sinh khối tự nhiên</li>
-            </ul>
-        </section>
+        <!-- Nội dung chính -->
+        <main class="main-content">
+            
+            <section class="section">
+                <h2>Giới thiệu</h2>
+                <p>Xin chào! Tôi là Lê Quốc Tuấn, sinh viên ngành Công nghệ Thông tin, đam mê lập trình và thiết kế web. Tôi luôn sẵn sàng học hỏi và tham gia các dự án mới để phát triển kỹ năng.</p>
+            </section>
 
-        <section id="skills" class="section hidden">
-            <h2>Kỹ năng</h2>
-            <ul>
-                <li>💻 Lập trình: C++, Python, HTML, CSS, JavaScript</li>
-                <li>🧩 Thiết kế web cơ bản và tối ưu giao diện người dùng</li>
-                <li>📊 Kỹ năng làm việc nhóm, thuyết trình và sáng tạo giải pháp</li>
-                <li>🧠 Tư duy logic, học nhanh và thích khám phá công nghệ mới</li>
-            </ul>
-        </section>
+            <section class="section">
+                <h2>Học vấn</h2>
+                <ul>
+                    <li><strong>2024 - nay:</strong> Đại học Sư phạm TP.HCM – CNTT</li>
+                    <li><strong>2021 - 2024:</strong> TH-THCS-THPT Thanh Bình – Khối tự nhiên</li>
+                </ul>
+            </section>
 
-        <section id="projects" class="section hidden">
-            <h2>Dự án tiêu biểu</h2>
-            <ul>
-                <li><strong>Trang Portfolio cá nhân:</strong> Dự án web đầu tay, sử dụng HTML, CSS và JavaScript để tạo trang cá nhân có hiệu ứng động.</li>
-                <li><strong>Ứng dụng Quản lý sinh viên:</strong> Viết bằng C++ giúp quản lý thông tin sinh viên, điểm số và xếp loại.</li>
-            </ul>
-        </section>
+            <section class="section">
+                <h2>Kỹ năng</h2>
+                <ul class="skills">
+                    <li>💻 C++, Python, HTML, CSS, JavaScript</li>
+                    <li>🧩 Thiết kế web cơ bản, tối ưu UI/UX</li>
+                    <li>📊 Làm việc nhóm, thuyết trình, sáng tạo giải pháp</li>
+                    <li>🧠 Tư duy logic, học nhanh, thích khám phá công nghệ mới</li>
+                </ul>
+            </section>
 
-        <section id="contact" class="section hidden">
-            <h2>Liên hệ</h2>
+            <section class="section">
+                <h2>Dự án tiêu biểu</h2>
+                <ul class="projects">
+                    <li><strong>Trang Portfolio cá nhân:</strong> Web động, HTML + CSS + JS, thiết kế responsive.</li>
+                    <li><strong>Ứng dụng Quản lý sinh viên:</strong> Viết bằng C++ để quản lý thông tin, điểm số.</li>
+                </ul>
+            </section>
 
-            <p class="contact-item">
-               <span class="mail-icon">
-                  <span class="envelope"></span>
-               </span>
-               <strong>Email:</strong>
-        <a href="mailto:cubo40925@gmail.com">cubo40925@gmail.com</a>
-    </p>
-
-    <p class="contact-item">
-        <span class="fb-icon">
-            <span class="f-letter">f</span>
-        </span>
-        <strong>Facebook:</strong>
-        <a href="https://www.facebook.com/quoc.tuan.310257" target="_blank">
-            facebook.com/quoc.tuan.310257
-        </a>
-    </p>
-
-    <p class="contact-item">
-        <span class="ig-icon">
-            <span class="ig-camera"></span>
-        </span>
-        <strong>Instagram:</strong>
-        <a href="https://www.instagram.com/kurayami2k7/" target="_blank">@kurayami2k7</a>
-    </p>
-
-    <p class="contact-item">
-        <span class="phone-icon">
-            <span class="phone-symbol">☎</span>
-        </span>
-        <strong>Điện thoại:</strong>
-        <a href="tel:0934103004">0934103004</a>
-    </p>
-</section>
-
-
-
+        </main>
     </div>
-
-    <script>
-        // Hiển thị phần được chọn
-        function showSection(id) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(sec => sec.classList.add('hidden'));
-            document.getElementById(id).classList.remove('hidden');
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Tạo hiệu ứng hạt
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const count = 25;
-            for (let i = 0; i < count; i++) {
-                const p = document.createElement('div');
-                p.classList.add('particle');
-                p.style.width = p.style.height = Math.random() * 6 + 3 + 'px';
-                p.style.left = Math.random() * 100 + '%';
-                p.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                p.style.animationDelay = Math.random() * 5 + 's';
-                particlesContainer.appendChild(p);
-            }
-        }
-        window.onload = createParticles;
-    </script>
 </body>
 </html>
+
