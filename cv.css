@@ -1,323 +1,61 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Reset cơ bản */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #f4f4f9; color: #333; }
+
+/* Container chính */
+.container {
+    display: flex;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #74ABE2, #5563DE);
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background: linear-gradient(180deg, #5563DE, #74ABE2);
     color: #fff;
-    overflow-x: hidden;
+    padding: 30px 20px;
     text-align: center;
 }
 
-/* Hạt nền */
-.particles {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0; left: 0;
-    z-index: 0;
-    pointer-events: none;
-}
-.particle {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    animation: float 15s linear infinite;
-}
-@keyframes float {
-    from { transform: translateY(100vh); opacity: 1; }
-    to { transform: translateY(-10vh); opacity: 0; }
-}
-
-/* Header */
-.header {
-    position: relative;
-    z-index: 1;
-    padding: 50px 20px 30px;
-}
-.avatar {
+.sidebar .avatar {
     width: 140px;
     height: 140px;
     border-radius: 50%;
     border: 3px solid #fff;
-    object-fit: cover;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-.subtitle {
-    font-size: 1.1em;
-    opacity: 0.9;
-    margin-top: 8px;
-}
-
-/* Buttons */
-.buttons {
-    margin-top: 25px;
-}
-button {
-    background-color: #FFD700;
-    color: #333;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    margin: 5px;
-    transition: all 0.3s ease;
-}
-button:hover {
-    background-color: #FFC107;
-    transform: translateY(-2px);
-}
-
-/* Nội dung */
-.content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    margin: 20px auto 60px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.section {
-    display: none;
-    text-align: left;
-    animation: fadeIn 0.8s ease-out;
-}
-.section h2 {
-    color: #FFD700;
     margin-bottom: 15px;
-}
-.section ul {
-    list-style: none;
-    padding-left: 0;
-}
-.section li {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-.section p, .section li {
-    color: rgba(255,255,255,0.95);
-}
-.section a {
-    color: #FFD700;
-    text-decoration: none;
-}
-.section a:hover {
-    text-decoration: underline;
+    object-fit: cover;
 }
 
-.hidden {
-    display: none;
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.sidebar h1 { font-size: 22px; margin-bottom: 5px; }
+.sidebar .role { font-size: 14px; opacity: 0.9; margin-bottom: 20px; }
+
+/* Liên hệ */
+.sidebar .contact h3 { margin-bottom: 10px; text-transform: uppercase; font-size: 16px; letter-spacing: 1px; }
+.sidebar .contact p { font-size: 14px; margin: 6px 0; }
+.sidebar .contact a { color: #ffd700; text-decoration: none; }
+.sidebar .contact a:hover { text-decoration: underline; }
+
+/* Nội dung chính */
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
 }
 
-/* Khi hiển thị phần */
-.section:not(.hidden) {
-    display: block;
+.main-content .section { margin-bottom: 30px; }
+.main-content h2 {
+    color: #5563DE;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #ffd700;
+    display: inline-block;
+    padding-bottom: 4px;
 }
+.main-content ul { list-style: none; padding-left: 0; }
+.main-content ul li { margin-bottom: 8px; line-height: 1.5; }
+.skills li, .projects li { background: #f9f9f9; padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; }
+.skills li::before { content: "• "; color: #5563DE; font-weight: bold; }
 
-.icon {
-    width: 22px;
-    height: 22px;
-    vertical-align: middle;
-    margin-right: 8px;
-    border-radius: 4px;
-    mix-blend-mode: multiply; /* Giúp logo hòa với nền */
-    transition: transform 0.2s ease, filter 0.3s ease;
-}
-.icon:hover {
-    transform: scale(1.15);
-    filter: brightness(1.2);
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 6px;
-}
-
-/* Vòng tròn vàng */
-.mail-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 26px;
-    height: 26px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid #FFD700;
-    border-radius: 50%;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-}
-
-/* Bức thư ở giữa */
-.envelope {
-    position: relative;
-    display: block;
-    width: 14px;
-    height: 10px;
-    border: 2px solid #ddd;
-    border-radius: 2px;
-    box-sizing: border-box;
-}
-
-/* Hai đường chéo nắp thư */
-.envelope::before,
-.envelope::after {
-    content: "";
-    position: absolute;
-    top: 3px;
-    width: 8px;
-    height: 2px;
-    background: #ddd;
-}
-
-.envelope::before {
-    left: 0;
-    transform: rotate(35deg);
-}
-
-.envelope::after {
-    right: 0;
-    transform: rotate(-35deg);
-}
-
-/* Hiệu ứng hover */
-.mail-icon:hover {
-    background: #FFD700;
-    transform: scale(1.12);
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-.mail-icon:hover .envelope,
-.mail-icon:hover .envelope::before,
-.mail-icon:hover .envelope::after {
-    border-color: #333;
-    background: #333;
-}
-/* === CẤU TRÚC CHUNG === */
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0;
-}
-.contact-item a {
-    color: #FFD700;
-    text-decoration: none;
-}
-.contact-item a:hover {
-    text-decoration: underline;
-}
-
-/* === ICON CHUNG === */
-.mail-icon, .fb-icon, .ig-icon, .phone-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 28px;
-    height: 28px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid #FFD700;
-    border-radius: 50%;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-}
-.mail-icon:hover, .fb-icon:hover, .ig-icon:hover, .phone-icon:hover {
-    background: #FFD700;
-    transform: scale(1.12);
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-/* === EMAIL (giữ nguyên phong bì) === */
-.envelope {
-    position: relative;
-    display: block;
-    width: 14px;
-    height: 10px;
-    border: 2px solid #ddd;
-    border-radius: 2px;
-}
-.envelope::before,
-.envelope::after {
-    content: "";
-    position: absolute;
-    top: 3px;
-    width: 8px;
-    height: 2px;
-    background: #ddd;
-}
-.envelope::before { left: 0; transform: rotate(35deg); }
-.envelope::after { right: 0; transform: rotate(-35deg); }
-.mail-icon:hover .envelope,
-.mail-icon:hover .envelope::before,
-.mail-icon:hover .envelope::after {
-    border-color: #333;
-    background: #333;
-}
-
-/* === FACEBOOK === */
-.f-letter {
-    color: #ddd;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-}
-.fb-icon:hover .f-letter {
-    color: #333;
-}
-
-/* === INSTAGRAM === */
-.ig-camera {
-    width: 14px;
-    height: 14px;
-    border: 2px solid #ddd;
-    border-radius: 4px;
-    position: relative;
-}
-.ig-camera::before {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 4px;
-    height: 4px;
-    border: 2px solid #ddd;
-    border-radius: 50%;
-}
-.ig-camera::after {
-    content: "";
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    width: 2px;
-    height: 2px;
-    background: #ddd;
-    border-radius: 50%;
-}
-.ig-icon:hover .ig-camera,
-.ig-icon:hover .ig-camera::before,
-.ig-icon:hover .ig-camera::after {
-    border-color: #333;
-    background: #333;
-}
-
-/* === PHONE === */
-.phone-symbol {
-    font-size: 15px;
-    color: #ddd;
-}
-.phone-icon:hover .phone-symbol {
-    color: #333;
-}
