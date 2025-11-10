@@ -101,6 +101,29 @@ body { font-family: 'Segoe UI', sans-serif; background: #f4f4f9; color: #333; }
 .p2 { width: 90%; } /* HTML */
 .p3 { width: 85%; } /* CSS */
 .p4 { width: 60%; } /* JavaScript */
+/* Căn thẳng hàng phần liên hệ */
+.contact p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact strong {
+    width: 90px; /* độ rộng cố định */
+    display: inline-block;
+}
+
+.contact a {
+    flex: 1;
+    text-align: right;
+    color: #ffd700;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
 
 
 
